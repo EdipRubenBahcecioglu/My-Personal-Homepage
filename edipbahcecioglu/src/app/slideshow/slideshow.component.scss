@@ -1,0 +1,63 @@
+// Diese SCSS Datei bezieht sich nur auf die im selben Ornder befindende HTML Datei
+// Jede HTML Datei wird später eine eigene SCSS Datei haben um besseren Überblick zu haben
+
+.slideshow-container {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.img-slideshow {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%; // Obwohl wir bereits width 100vw vergeben haben wird der Scrollbalken in die 100vh mit einberechnet, daher nochmal max-width einsetzten um Scrollbalken verschwindne zu lassen
+    object-fit: cover;
+    animation: zoomIn 8s ease; // Wir rufen mit animation unser keyframe zoonIn auf und wollen sagen, dass die Zoomfunktion 8s andauern soll. Ease = Animatonsbeschleunigung
+}
+
+@keyframes zoomIn {
+
+    // Dieses Keyframe kann angewendet werden wenn wir in etwas reinzoomen wollen, hier wird der Scale von 1.0 auf 1.2 geändert
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.slideshow-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+
+    p {
+        // In SCSS können wir innhalb der selben Klammer auf ein anderes HTML-Attribut innerhalb des slideshows-overlay Containers zugreifen und müssen nicht mit .slideshow overplay p eine neue CSS Definition starten
+        margin-left: 120px;
+        max-width: 800px;
+        padding-left: 32px;
+        color: white;
+        font-size: 80px;
+        border-left: 8px solid #d85050;
+    }
+}
+
+.fadeIn {
+    animation: fadeInAnimation 1.2s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

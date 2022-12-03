@@ -1,0 +1,8 @@
+<div class="slideshow-container">
+    <img class="img-slideshow" *ngIf="showImage" src="assets/img/{{ images[currentImage] }}"> <!--In Angular können wir festgelegte Variablen auch in der HTML anwenden oder z.B. mit *ngIf eine IfAbrage starten-->
+    <!--Hier musste jetzt nicht der ganze Pfad angebeben werden sondern nur der überordner worin sich der img Ordner befindet-->
+</div>
+
+<div class="slideshow-container slideshow-overlay">
+    <p class="fadeIn" *ngIf="showImage">{{headlines[currentImage]}}</p> <!--Wenn Boonlean showImage = true ist, dann soll der p Tag angezeigt werden-->
+</div>
