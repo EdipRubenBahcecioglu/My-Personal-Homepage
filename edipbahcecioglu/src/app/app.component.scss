@@ -1,0 +1,26 @@
+// Diese SCSS Datei bezieht sich nur auf die im selben Ornder befindende HTML Datei
+// Jede HTML Datei wird später eine eigene SCSS Datei haben um besseren Überblick zu haben
+
+.slideshow-container{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.img-slideshow{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%; // Obwohl wir bereits width 100vw vergeben haben wird der Scrollbalken in die 100vh mit einberechnet, daher nochmal max-width einsetzten um Scrollbalken verschwindne zu lassen
+    object-fit: cover;
+    animation: zoomIn 8s ease; // Wir rufen mit animation unser keyframe zoonIn auf und wollen sagen, dass die Zoomfunktion 8s andauern soll. Ease = Animatonsbeschleunigung
+}
+
+@keyframes zoomIn { // Dieses Keyframe kann angewendet werden wenn wir in etwas reinzoomen wollen, hier wird der Scale von 1.0 auf 1.2 geändert
+    from{
+        transform: scale(1.0);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}

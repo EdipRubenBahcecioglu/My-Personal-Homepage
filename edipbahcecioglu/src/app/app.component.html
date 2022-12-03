@@ -1,1 +1,4 @@
-<h1>Mero!</h1>
+<div class="slideshow-container">
+    <img class="img-slideshow" *ngIf="showImage" src="assets/img/{{ images[currentImage] }}"> <!--In Angular können wir festgelegte Variablen auch in der HTML anwenden oder z.B. mit *ngIf eine IfAbrage starten-->
+    <!--Hier musste jetzt nicht der ganze Pfad angebeben werden sondern nur der überordner worin sich der img Ordner befindet-->
+</div>
