@@ -1,0 +1,26 @@
+.container {
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 120px;
+}
+
+.footerLinks {
+    height: 80px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    padding-left: 120px;
+    padding-right: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        cursor: pointer;
+        &:hover {
+            // Man kann in SCSS alle Effekte etc. in der selben Klammer definieren, hier muss man ein & davorschreiben
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}

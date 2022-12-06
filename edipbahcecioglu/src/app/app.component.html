@@ -1,4 +1,13 @@
 <!--ALLE COMPONENTEN DIE UNSERE APP BENÖTIGT WERDEN HIER AUFGELISTET UND IN DER INDEX UNTER APP ROOT GELADEN-->
 <!--DER GEDANKENGANG MEHRERE COMPONENTEN ZU ERSTELLEN IST, EINE BESSERE ÜBERSICHT UND NE BESEERE LESBARKEIT FÜR DEN ENTWICKLER ZU SCHAFFEN-->
-<app-menu></app-menu> <!--Wir fügen mit dieser Zeile den Selector bzw. die Componente menu im Appordner unserer App hinzu -->
-<app-slideshow></app-slideshow> <!--Jede Komponente erhällt einen eigenen Unterodner von APP und jeweils eine eigene SCSS, HTNL & Typescript -->
+<app-menu [darkMode]="router.url !== '/'"></app-menu> <!--Hier wird der Wert der Variable aus der TS Datei bestimmt, da in der TS Datei ein @Input vorher geschrieben wurde --> <!--Wir fügen mit dieser Zeile den Selector bzw. die Componente menu im Appordner unserer App hinzu // Jede Komponente erhällt einen eigenen Unterodner von APP und jeweils eine eigene SCSS, HTNL & Typescript -->
+<div [class.container]="router.url !=='/'"> <!--Wenn unsere Router also Link nicht den Pfad / hat, dann soll die Klasse container eingefügt werden-->
+    <router-outlet></router-outlet> <!--Alles was innerhalb dieses router-outlet in der app-routung.modules.ts definiert wird, öffnet sich erst, wenn der Link übereinstimmt z.B. edipbahcecioglu/impressum, dann wird Impressum geöffnet oder /datenschutz dann wird Datenschutz geöffnet-->
+</div>
+
+<footer>
+    <div class="footerLinks">
+        <a (click)="translate.use('de')">DE</a> |
+        <a (click)="translate.use('en')">EN</a>
+    </div>
+</footer>

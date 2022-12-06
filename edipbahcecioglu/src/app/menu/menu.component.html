@@ -1,11 +1,18 @@
 
-<header>
-    <img src="assets/img/logo.png">
+<header [class.headerDark]="darkMode">
+    <img *ngIf="!darkMode" routerLink="/" src="assets/img/logo.png"> <!--Am Ende des Links wird mit routerLink ein / hinzugefügt-->
+    <img *ngIf="darkMode" routerLink="/" src="assets/img/logo_dark.png"> <!--Mit *ngIf fragen wir ab of darkMode true ist und zeigen dementsprechend das Logo in einer anderen Farbe an-->
 
-    <div>
-        <a href="#">Home</a>
-        <a href="#">Curriculum</a>
-        <a href="#">Projekte</a>
-        <a href="#">Impressum</a>
+    <div [class.darkLinks]="darkMode"> <!--Die Classe darkLinks wird nur hinzugefügt wenn darkMode false ist ansonsten hat die Div keine Klasse-->
+        <a translate routerLink="/">Home</a> <!--Am Ende des Links wird mit routerLink / hinzugefügt-->
+        <a translate routerLink="/data-protection">Data protection</a> <!--Wenn wir auf den Menupunkt klicken wird unser Link mit SEITE.de/data-protection enden-->
+        <!-- <a href="#">Projects</a> -->
+        <!-- <a href="#">Curriculum</a>
+        <a href="#">Projects</a> -->
+        <a translate routerLink="/imprint">Imprint</a> <!--Am Ende des Links wird mit routerLink /imprint hinzugefügt-->
     </div>
 </header>
+
+<footer>
+    <!-- <a (click)="translate.use('en')">Test</a> -->
+</footer>

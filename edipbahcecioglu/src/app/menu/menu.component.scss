@@ -2,6 +2,7 @@ header{
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
     height: 80px;
     z-index: 1;
     padding-left: 120px;
@@ -16,12 +17,27 @@ header{
         margin-left: 32px;
         font-weight: 500;
 
-        &:hover{
+        &:hover{ // Man kann in SCSS alle Effekte etc. in der selben Klammer definieren, hier muss man ein & davorschreiben
             color: rgba(255,255,255, 0.8);
         }
     }
 
     img{
         height: 50px;
+        cursor: pointer;
     }
+}
+
+.darkLinks{
+    a {
+        color: black;
+        &:hover{
+            color: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+.headerDark{
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 }
